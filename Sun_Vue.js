@@ -5,15 +5,16 @@
  */
 import Observer from "./Observer.js";
 export default class Sun_Vue {
-  constructor(options) {
-    this._data = options.data;
-    this.init();
-  }
-  init() {
-    new Observer(this._data);
-    this._data.list = {
-      name: "999",
-    };
-    console.log(this._data);
-  }
+	constructor(options) {
+		this._data = options.data;
+		this.init();
+	}
+	init() {
+		this._data.userlist = [{
+			name: "黄忠",
+			age: '56'
+		}]
+		new Observer(this._data);
+		console.log(this._data);
+	}
 }
