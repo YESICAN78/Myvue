@@ -1,19 +1,20 @@
-import {
-	hasOwn
-} from './hasOwn.js'
-import {
-	isObject
-} from './isObject.js'
-import Observer from '../Observer.js'
+/*
+ * @Author: sunFulin
+ * @Date: 2022-09-30 08:55:46
+ * @LastEditTime: 2022-09-30 13:10:40
+ */
+import { hasOwn } from "./hasOwn.js";
+import { isObject } from "./isObject.js";
+import Observer from "../Observer.js";
 export function observer(value) {
-	if (!isObject(value)) {
-		return
-	}
-	let ob;
-	if (hasOwn(value, '__ob__') && value.__ob__ instanceof new Observer()){
-		 ob = value.__ob__;
-	}else {
-		ob = new Observer(value)
-	}
-	return ob
+  if (isObject(value) !== "Object") {
+    return;
+  }
+  let ob;
+  if (hasOwn(value, "__ob__")) {
+    ob = value.__ob__;
+  } else {
+    ob = new Observer(value);
+  }
+  return ob;
 }
