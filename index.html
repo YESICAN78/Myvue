@@ -1,7 +1,7 @@
 <!--
  * @Author: sunFulin
  * @Date: 2022-09-29 13:46:55
- * @LastEditTime: 2022-09-29 16:01:58
+ * @LastEditTime: 2022-10-09 16:26:54
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +12,17 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="root">
-      <button id="btn">点击</button>
-    </div>
+    <div id="root"></div>
   </body>
+  <script type="text/template" id="template">
+    <div>
+      <div class="title">用户信息</div>
+      <div class="userInfo">
+        <div>姓名：{{name}}</div>
+        <div>年龄：{{age}}</div>
+      </div>
+    </div>
+  </script>
   <script type="module">
     import Sun_Vue from "./Sun_Vue.js";
     let app = new Sun_Vue({
@@ -31,4 +38,8 @@
       },
     });
   </script>
+  <script>
+ 
+  </script>
 </html>
+
